@@ -1,4 +1,17 @@
 <html>
-	<h1>Hi there </h1>
-	
+	<head>
+	<title>Testing Socialblood</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	</head>
+	<body>
+		<h1>Hi there </h1>
+
+		{% for post in posts %}
+			<div>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
+	</body>	
 </html>
