@@ -11,6 +11,7 @@
 
 	<nav>
 		<div class="wrapper">
+			<img src="{% static 'images/logo-dark.png' %}">
 			<button>New Request</button>
 			<div class="nav-info">
 				<h3><a href="#">Why Donate?</a></h3>
@@ -20,13 +21,15 @@
 		</div>    
 	</nav>
 
-		<h1>Hi there </h1>
+		<div class="container">
+			
+		</div>
 
-		{% for post in posts %}
+<!-- 		{% for post in posts %}
 			<div>
 				<h1><a href="">{{ post.title }}</a></h1>
 				<p>{{ post.text|linebreaksbr }}</p>
 			</div>
-		{% endfor %}
+		{% endfor %} -->
 	</body>	
 </html>

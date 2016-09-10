@@ -17,6 +17,12 @@ nav
 	margin: auto;
 }
 
+.wrapper img
+{
+	width:40px;
+	height: 40px;
+}
+
 .wrapper button
 {
 	font-size: 1.2em;
@@ -56,3 +62,9 @@ nav
 	margin-right: 4%;
 }
 
+.container
+{
+	background-color:rgba(100,100,255,0.5);
+	height: 620px;
+	border:1px solid black;
+}
