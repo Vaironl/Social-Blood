@@ -20,11 +20,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-class UserProfile(models.Model):
-    #link to user model instance
-    user = models.OneToOneField(User)
-
-    def __str__(self):
-        return self.user.username
-
