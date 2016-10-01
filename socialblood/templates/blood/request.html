@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Request</title>
+</head>
+<body>
+
+<form action="/request/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="Submit" value="Submit">
+
+</form>
+
+</body>
+</html>
