@@ -1,3 +1,6 @@
+/*FONTS*/
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
 body
 {
 	/*background-color: rgba(230, 230, 230, 0.4);*/
@@ -55,6 +58,14 @@ nav
 	font-weight: 400;	
     padding: 5px 10px;
 
+    margin:auto;
+    width: 100%;
+
+}
+
+.main-button a
+{
+	color:white;
 }
 
 .wrapper .nav-info
@@ -73,6 +84,47 @@ nav
 	margin-right: 4%;
 	top:0px;
 	height:10px;
+}
+
+.user-section
+{
+	/*background-color: #e3e3e3;*/
+	border-left:1px solid black;
+	width: 20%;
+	height: 100px;
+	display: inline-block;
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+
+.username
+{
+	position:relative;
+	display:inline-block;
+
+	color:black;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.6em;
+	left:100px;
+	text-align: center;
+	right:20px;
+}
+
+.logout 
+{
+	position: relative;
+	display: inline-block;
+	background-color: red;
+	width: 40%;
+	margin:auto;
+	top:35px;
+}
+
+.logout a
+{
+	color:white;
+	font-size:0.5em;
 }
 
 .container

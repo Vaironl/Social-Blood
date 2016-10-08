@@ -15,21 +15,28 @@
     </div>
     <div class="wrapper">
         <div class="nav-info">
+             {% if user.is_authenticated %}
+            <h3><a href="/request/">Request Blood</a></h3>
+            <h3><a href="#">Why Donate?</a></h3>
+            <h3><a href="#">About</a></h3>
+            <h3><a href="#">Contact</a></h3>
+            {% else %}
             <h3><a href="{% url 'login'%}">Login</a></h3>
             <h3><a href="{% url 'register' %}">Register</a></h3>
             <h3><a href="#">Why Donate?</a></h3>
             <h3><a href="#">About</a></h3>
             <h3><a href="#">Contact</a></h3>
+            {% endif %}
 
         </div>
-        <div>
-            {% if user.is_authenticated %}
-            Hello, {{user.username}}
-            {% else %}
-            Hello!
-            {% endif %}
-        </div>
     </div>
+         {% if user.is_authenticated %}
+            <div class=" user-section">
+                <h1 class = "username">{{user.username}}</h1>
+                <button class="main-button logout"><a href="/logout/">Logout</a></button>
+            </div>
+            {% else %}
+            {% endif %}
 </nav>
 
 <div class="container">
@@ -39,7 +46,10 @@
         enough voluntary blood donations. You live in the same world as others and 90 minutes of your time once or twice
         a year could save 3 lives. Furthermore, its healthy to donate blood!
     </p>
-    <button href="{% url 'register' %}" class="main-button">Register Now</button>
+    {% if user.is_authenticated %}
+    {% else %}
+        <button class="main-button"><a href="/register/">Register Now</a></button>
+    {% endif %}
 </div>
 
 <!-- 		{% for post in posts %}

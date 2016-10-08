@@ -1,0 +1,18 @@
+
+body
+{
+width:50%;
+margin:auto
+}
+
+input
+{
+display:block;
+margin-bottom: 10px;
+font-size:1em;
+}
+
+.username
+{
+float:none;
+}

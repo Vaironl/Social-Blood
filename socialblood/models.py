@@ -21,11 +21,20 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+BLOOD_TYPES = ('A+', 'A+'),\
+              ('A-', 'A-'),\
+              ('B+', 'B+'),\
+              ('B-', 'B-'),\
+              ('AB+', 'AB+'),\
+              ('AB-', 'AB-'),\
+              ('O+', 'O+'),\
+              ('O-', 'O-'),
 
 class Request(models.Model):
-    blood_type = models.CharField(max_length=4)
+    blood_type = models.CharField(max_length=3, choices =BLOOD_TYPES)
     create_date = models.DateTimeField(blank=True, null=True)
     location = models.CharField(max_length=120)
+    user = models.ForeignKey('auth.User')
 
     def save(self, *args, **kwargs):
         super(Request, self).save(*args, **kwargs)

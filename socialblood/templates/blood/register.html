@@ -1,21 +1,25 @@
 {% load staticfiles %}
-{% block title_block %}
-Register
-{% endblock %}
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
 {% block body_block %}
-<h1>Register Page</h1>
+<div class="wrapper">
 {% if registered %}
-Rango says: <strong>thank you for registering!</strong>
-<a href="/rango/">Return to the homepage.</a><br/>
-{% else %}
-Rango says: <strong>register here!</strong><br/>
-<form id="user_form" method="post" action="/register/"
-      enctype="multipart/form-data">
-    {% csrf_token %}
-    <!-- Display each form  -->
-    {{ user_form.as_p }}
-    <!--{{ profile_form.as_p }}-->
-    <!-- Provide a button to click to submit the form. -->
-    <input type="submit" name="submit" value="Register"/></form>
+	<h1><strong>thank you for registering!</strong></h1>
+	<a href="/rango/">Return to the homepage.</a><br/>
+	{% else %}
+	<h1><strong>Register Here!</strong></h1>
+	<form id="user_form" method="post" action="/register/"
+	      enctype="multipart/form-data">
+	    {% csrf_token %}
+	    <!-- Display each form  -->
+	    {{ user_form.as_p }}
+	    <!--{{ profile_form.as_p }}-->
+	    <!-- Provide a button to click to submit the form. -->
+	    <input class = "submit-button" type="submit" name="submit" value="Register"/>
+	    </form>
 {% endif %}
+</div>
 {% endblock %}
