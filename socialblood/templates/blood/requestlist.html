@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requests Made</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/requestlist.css' %}">
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="{% static 'images/logo-dark.png' %}">
+    </div>
+    <h3><a href="/">Home</a></h3>
+</nav>
+
+<div class="wrapper">
+
+	<ul>
+	{% for request in object_list %}
+	    <li>{{ request.blood_type }} for {{request.user}} in {{request.location}} </li>
+
+	{% empty %}
+	    <li>No requests have been made yet.</li>
+
+	{% endfor %}
+	</ul>
+</div>
+
+</body>
+</html>

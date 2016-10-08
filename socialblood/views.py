@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from socialblood.models import Post
+from socialblood.models import Post, Request
 from socialblood.forms import RequestForm, UserForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
 
 # def index(request):
@@ -79,3 +80,14 @@ def add_request(request):
     else:
         form = RequestForm()
     return render(request, 'blood/request.html', {'form': form})
+
+
+class RequestListView(ListView):
+    """Allows the user to view the blood requests made"""
+
+    model = Request
+    template_name = 'blood/requestlist.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RequestListView, self).get_context_data(**kwargs)
+        return context
