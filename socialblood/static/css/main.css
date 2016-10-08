@@ -1,132 +1,18 @@
 /*FONTS*/
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 
+*
+{
+	font-family: 'Roboto', sans-serif;
+	font-size:1em;
+}
+
 body
 {
 	/*background-color: rgba(230, 230, 230, 0.4);*/
 	background-color: #f5f8f8;
 }
 
-nav
-{
-	width: 100%;
-	height: 100px;
-	background-color: white;
-}
-
-.logo
-{
-    width:100%;
-    display:block;
-    margin:auto auto;
-    text-align:center;
-}
-
-.logo img
-{
-	width:40px;
-	height: 40px;
-}
-.wrapper
-{
-	position: relative;
-    display:block;
-	width: 100%;
-	height: 40%;
-	text-align:center;
-	/*border:1px solid black;*/
-}
-
-
-.main-button
-{
-	font-size: 2.0em;
-	border-radius: 4px;
-	color:white;
-	background-color: rgba(50, 200, 204, 1);
-	box-shadow: 2px 1px 4px rgba(0,0,0,0.5);
-	border:1px solid rgba(0, 0, 0, 1);
-
-	position: relative;
-	top:6%;
-	left:1%;
-
-	font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
-
-	border-width: 0px 0px 3px;
-	border-color: rgba(1, 142, 149, 0.4);
-
-	font-weight: 400;	
-    padding: 5px 10px;
-
-    margin:auto;
-    width: 100%;
-
-}
-
-.main-button a
-{
-	color:white;
-}
-
-.wrapper .nav-info
-{
-	display: inline;
-	width: 60%;
-	height: 100px;
-	text-align: center;
-
-}
-
-.nav-info h3
-{
-	text-decoration: underline;
-	display: inline;
-	margin-right: 4%;
-	top:0px;
-	height:10px;
-}
-
-.user-section
-{
-	/*background-color: #e3e3e3;*/
-	border-left:1px solid black;
-	width: 20%;
-	height: 100px;
-	display: inline-block;
-	position:absolute;
-	top:0px;
-	right:0px;
-}
-
-.username
-{
-	position:relative;
-	display:inline-block;
-
-	color:black;
-	font-family: 'Roboto', sans-serif;
-	font-size: 1.6em;
-	left:100px;
-	text-align: center;
-	right:20px;
-}
-
-.logout 
-{
-	position: relative;
-	display: inline-block;
-	background-color: red;
-	width: 40%;
-	margin:auto;
-	top:35px;
-}
-
-.logout a
-{
-	color:white;
-	font-size:0.5em;
-}
 
 .container
 {
@@ -137,8 +23,8 @@ nav
 
 .container p
 {
-	font-size: 2em;
-	letter-spacing: 2px;	
+	font-size: 1.5em;
+	letter-spacing: 1px;	
 	font-weight: 200;
 	position: relative;
 	top:5%;

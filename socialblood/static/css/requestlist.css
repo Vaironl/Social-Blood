@@ -5,17 +5,8 @@
 	font-size:1em;
 }
 
-body
-{
-background-color:#e3e3e3;
-}
-
-.wrapper
-{
-	position: relative;
-	width:60%;
-	margin:0 auto;
-	top:60px;
+body {
+	background-color: #f5f8f8;
 }
 
 .logo
@@ -32,6 +23,14 @@ background-color:#e3e3e3;
 	height: 40px;
 }
 
+.wrapper
+{
+	width: 60%;
+	margin:0 auto;
+	position: relative;
+	top:20px;
+}
+
 a
 {
 	font-size: 1em;
@@ -39,12 +38,62 @@ a
 
 ul li
 {
-
-font-size: 2em;
+position: relative;
 list-style: none;
-border: 1px solid black;
 border-radius;
 display: inline-block;
 width: 100%;
+border-bottom: 1px solid black
+
 }
 
+ul li h1
+{
+	font-size: 1.5em;
+	background-color: rgba(0,0,0,0.2);
+	border-radius: 10px;
+	padding:10px;
+}
+
+ul li .user
+{
+	position: relative;
+	display: inline-block;
+	color:black;
+}
+
+ul li .user h1
+{
+	display: block;
+}
+
+ul li h2
+{
+
+background-color: rgba(102, 204, 255, 0.5);
+border-radius: 10px;
+padding:10px;
+}
+
+ul li .blood_type
+{
+	display: inline-block;
+}
+
+ul li .blood_type h1
+{
+	display: block;
+	color:black;
+	margin-right: 10px;
+}
+
+ul li .location{
+display: inline-block;
+}
+
+ul li .location h1
+{
+	display: block;
+	color:black;
+	margin-right: 10px;
+}

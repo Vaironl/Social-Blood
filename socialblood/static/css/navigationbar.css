@@ -1,0 +1,56 @@
+nav
+{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+}
+
+.logo
+{
+    width:100%;
+    display:inline-block;
+    margin:auto auto;
+    text-align:center;
+}
+
+.logo img
+{
+	width:40px;
+	height: 40px;
+}
+.nav-wrapper
+{
+	position: relative;
+    display:block;
+	width: 80%;
+	height: 40%;
+	text-align:center;
+	top:25px;
+}
+
+.nav-wrapper .nav-info
+{
+	display: inline;
+	width: 60%;
+	height: 100px;
+	text-align: center;
+}
+
+.nav-info h3
+{
+	display: inline;
+	margin-right: 4%;
+	height:10px;
+}
+
+h3 a
+{
+	color:rgba(0, 204, 255, 1);
+	font-size: 1em;
+}
+
+h3 a:hover
+{
+	color:black;
+	text-decoration: none;
+}

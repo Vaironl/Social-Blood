@@ -4,23 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Blood Request</title>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/navigationbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/request.css' %}">
 </head>
 <body>
 
+
+<nav>
+    <div class="logo">
+        <img src="{% static 'images/logo-dark.png' %}">
+    </div>
+    <div class="nav-wrapper">
+        <div class="nav-info">
+             {% if user.is_authenticated %}
+             <h3><a href="/">Home</a></h3>
+            <h3><a href="/requestlist/">Request List</a></h3>
+            <h3><a href="#">About</a></h3>
+            <h3><a href="#">Contact</a></h3>
+            {% else %}
+            <h3><a href="{% url 'login'%}">Login</a></h3>
+            <h3><a href="{% url 'register' %}">Register</a></h3>
+            <h3><a href="#">About</a></h3>
+            <h3><a href="#">Contact</a></h3>
+            {% endif %}
+
+        </div>
+    </div>
+         {% if user.is_authenticated %}
+            <div class=" user-section">
+                <h1 class = "username">{{user.username}}</h1>
+                <button class="myButton logout"><a href="/logout/">Logout</a></button>
+            </div>
+        {% else %}
+        {% endif %}
+</nav>
+
+
+<div class="container">
    {% if user.is_authenticated %}
-            <h1 class = "username">Hello,{{user.username}}!</h1>
    <form action="/request/" method="post">
     {% csrf_token %}
     {{ form }}
-    <input type="Submit" value="Submit">
+    <input class="myButton submitButton" type="Submit" value="Submit">
+    </form>
 
-</form>
    {% else %}
    <h1>Please login to make a request</h1>
    {% endif %}
-
-
+</div>
 </body>
 </html>

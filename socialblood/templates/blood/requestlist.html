@@ -6,6 +6,9 @@
     <title>Requests Made</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/navigationbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/requestlist.css' %}">
 </head>
 <body>
@@ -14,14 +17,49 @@
     <div class="logo">
         <img src="{% static 'images/logo-dark.png' %}">
     </div>
-    <h3><a href="/">Home</a></h3>
+    <div class="nav-wrapper">
+        <div class="nav-info">
+             {% if user.is_authenticated %}
+             <h3><a href="/">Home</a></h3>
+            <h3><a href="/request/">Request Blood</a></h3>
+            <h3><a href="#">About</a></h3>
+            <h3><a href="#">Contact</a></h3>
+            {% else %}
+            <h3><a href="{% url 'login'%}">Login</a></h3>
+            <h3><a href="{% url 'register' %}">Register</a></h3>
+            <h3><a href="#">About</a></h3>
+            <h3><a href="#">Contact</a></h3>
+            {% endif %}
+
+        </div>
+    </div>
+         {% if user.is_authenticated %}
+            <div class=" user-section">
+                <h1 class = "username">{{user.username}}</h1>
+                <button class="myButton logout"><a href="/logout/">Logout</a></button>
+            </div>
+        {% else %}
+        {% endif %}
 </nav>
 
 <div class="wrapper">
 
 	<ul>
 	{% for request in object_list %}
-	    <li>{{ request.blood_type }} for {{request.user}} in {{request.location}} </li>
+	    <li>
+            <div class="user">
+                <h1>Request by:</h1>
+                <h2>{{request.user}}</h2>
+            </div>
+            <div class="blood_type">
+            <h1>Blood type:</h1>
+            <h2>{{ request.blood_type }}</h2>
+            </div>
+            <div class="location">
+                <h1>Location:</h1>
+                <h2>{{request.location}}</h2>
+            </div>
+        </li>
 
 	{% empty %}
 	    <li>No requests have been made yet.</li>

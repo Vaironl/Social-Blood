@@ -7,15 +7,11 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 
-
-# def index(request):
-# 	return render(request, 'blood/index.html', {})
-#    # return HttpResponse("<h1>Social Blood</h1>")
-
 def index(request):
-    # Queryset
-    posts = Post.objects.all()
-    return render(request, 'blood/index.html', {'posts': posts})
+    return render(request, 'blood/index.html', {})
+
+def about(request):
+    return render(request, 'blood/about.html', {})
 
 def thank_you(request):
     return render(request, 'blood/thank_you_request.html', {})

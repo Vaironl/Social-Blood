@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/navigationbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
-    <!-- <script type="text/javascript" src="{% static 'js/animation.js' %}"></script> -->
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 </head>
 <body>
 
@@ -24,7 +22,7 @@
              {% if user.is_authenticated %}
             <h3><a href="/request/">Request Blood</a></h3>
             <h3><a href="/requestlist/">Request List</a></h3>
-            <h3><a href="/about">About</a></h3>
+            <h3><a href="#">About</a></h3>
             <h3><a href="#">Contact</a></h3>
             {% else %}
             <h3><a href="{% url 'login'%}">Login</a></h3>
@@ -44,17 +42,10 @@
     {% endif %}
 </nav>
 
-<div class="container">
-    <p>
-        This world faces a problem. There is almost always a shortage of blood in developing and developing nations.
-        (40,000 units of blood is required everyday in the United States). This problem could be solved if there were
-        enough voluntary blood donations. You live in the same world as others and 90 minutes of your time once or twice
-        a year could save 3 lives. Furthermore, its healthy to donate blood!
-    </p>
-    {% if user.is_authenticated %}
-    {% else %}
-        <button class="main-button"><a href="/register/">Register Now</a></button>
-    {% endif %}
+<div class="main-image">
+    <img src="{% static 'images/map.png' %}">
+    <h1>How the company came to be, why we do what we do
+and the team behind Socialblood.</h1>
 </div>
 
 <!-- 		{% for post in posts %}

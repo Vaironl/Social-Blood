@@ -1,0 +1,36 @@
+/*FONTS*/
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+*
+{
+	font-family: 'Roboto', sans-serif;
+	font-size:1em;
+}
+
+body
+{
+	/*background-color: rgba(230, 230, 230, 0.4);*/
+	background-color: #373f54;
+}
+
+.main-image
+{
+	position: relative;
+	width: 100%;
+}
+
+.main-image img
+{
+	width: 100%;
+}
+
+.main-image h1
+{
+	width: 100%;
+	font-size: 2em;
+	color:white;
+	position: absolute;
+	top:50%;
+	margin:0 auto;
+	text-align: right;
+}
