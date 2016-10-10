@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Socialblood Home</title>
+    <title>Socialblood - About</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/navigationbar.css' %}">
@@ -19,15 +19,14 @@
     </div>
     <div class="nav-wrapper">
         <div class="nav-info">
+            <h3><a href="/">Home</a></h3>
              {% if user.is_authenticated %}
             <h3><a href="/request/">Request Blood</a></h3>
             <h3><a href="/requestlist/">Request List</a></h3>
-            <h3><a href="#">About</a></h3>
             <h3><a href="#">Contact</a></h3>
             {% else %}
             <h3><a href="{% url 'login'%}">Login</a></h3>
             <h3><a href="{% url 'register' %}">Register</a></h3>
-            <h3><a href="#">About</a></h3>
             <h3><a href="#">Contact</a></h3>
             {% endif %}
 
@@ -43,16 +42,135 @@
 </nav>
 
 <div class="main-image">
-    <img src="{% static 'images/map.png' %}">
+    <img src="{% static 'images/bg.jpg' %}">
     <h1>How the company came to be, why we do what we do
 and the team behind Socialblood.</h1>
 </div>
 
-<!-- 		{% for post in posts %}
-			<div>
-				<h1><a href="">{{ post.title }}</a></h1>
-				<p>{{ post.text|linebreaksbr }}</p>
-			</div>
-		{% endfor %} -->
+<div class="container">
+    <div class="wrapper">
+        <div class="col-1">
+            <h1>Socialblood is building the largest network of blood donors, Hospitals and Blood banks on the web.</h1>
+            <p>Socialblood was founded by Karthik Naralasetty in 2011. He dropped out of Rutgers University, New Jersey to create his own tech-company and has been an Internet Entrepreneur ever since. In June 2011, he noticed the structural deficiencies in the local system of blood transfusions when he witnessed a family’s struggle to find a regular transfusion for their four year old to treat her Thalassemia; a disease which affects around 40 million Indians.</p>
+            <p>
+            At Socialblood, the mission is not only to create an easy, trustworthy and a reliable network of donors around the world but also grow together with Hospitals, Blood-banks and supporting organizations.We aim to change and disrupt the archaic ways of finding blood donors and build the largest network of voluntary donors around the world. Making it as easy as a few clicks.
+            </p>
+        </div>
+        <div class="col-2">
+            <div class="profile">
+                <img src="{% static 'images/karthiknaralasetty.png' %}">
+                <h1 class="name">Karthik Naralasetty</h1>
+                <h2 class="role">Founder</h2>
+                <p class="description">Karthik is a proud dropout from Rutgers University, An entrepreneur with a penchant to solve real world problems through technology.</p>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'images/siddhartharun.png' %}">
+                <h1 class="name">Siddharth Arun</h1>
+                <h2 class="role">Chief of Design</h2>
+                <p class="description">Siddharth is a UI/UX designer and love for all things minimalistic. His focus on solving problems through design makes the product easy to use and functional. </p>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'images/abhinav.png' %}">
+                <h1 class="name">Abhinav Srivastava</h1>
+                <h2 class="role">Chief of Marketing</h2>
+                <p class="description">Abhinav is Product Strategist. His focus on User Experience, Research and Marketing adds perspective to the product. </p>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'images/vaironm.jpg' %}">
+                <h1 class="name">Vairon Mendoza</h1>
+                <h2 class="role">Full Stack Developer</h2>
+                <p class="description">Vairon is a software developer with a high passion for Android and full stack software development.</p>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'images/mithun.png' %}">
+                <h1 class="name">Mithun Stephen</h1>
+                <h2 class="role">Chief of Engineering</h2>
+                <p class="description">Mithun is a well rounded Engineer. His work on Application Architecture and Backend development adds the necessary foundation to the product.</p>
+            </div>
+        </div>
+        <div class="investors-advisors">
+
+            <h1 class="title">INVESTORS & ADVISORS</h1>
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+
+
+            <div class="investor-profile">
+                <img src="{% static 'images/rajananandan.png' %}">
+                <div class="info">
+                    <h1 class="name">Rajan Anandan</h1>
+                    <h1 class="organization">Google India, MD</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

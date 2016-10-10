@@ -10,7 +10,36 @@
 body
 {
 	/*background-color: rgba(230, 230, 230, 0.4);*/
-	background-color: #f5f8f8;
+	background-color: #373f54;
+}
+
+.main-image
+{
+	position: relative;
+	width: 100%;
+}
+
+.main-image img
+{
+	width: 100%;
+}
+
+.main-image p
+{
+	position: relative;
+	top: 0px;
+	margin:0 auto;
+
+	font-size: 2em;
+	width: 70%;
+	text-align: center;
+	color:white;
+}
+
+.intro
+{
+	position: absolute;
+	top:40%;
 }
 
 
@@ -19,6 +48,7 @@ body
 	width: 60%;
 	margin:0 auto;
 	height: 480px;
+	background-color: red;
 }
 
 .container p

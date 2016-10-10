@@ -22,7 +22,9 @@ body
 .main-image img
 {
 	width: 100%;
+	opacity: .2;
 }
+
 
 .main-image h1
 {
@@ -30,7 +32,151 @@ body
 	font-size: 2em;
 	color:white;
 	position: absolute;
-	top:50%;
+	top:45%;
 	margin:0 auto;
-	text-align: right;
+	text-align: center;
+	color:white;
+}
+
+.container
+{
+	background-color: white;
+	width: 100%;
+}
+
+.wrapper
+{
+	width: 80%;
+	height: 100%;
+	margin:0 auto;
+}
+
+.col-1
+{
+	position: relative;
+	display: inline-block;
+
+	width: 45%;
+	float:left;
+}
+
+.col-1 h1
+{
+	font-weight: 600;
+	margin: 10%;
+	margin-left: 0px;
+	color:#6a6663;
+}
+
+.col-1 p
+{
+	font-size: 1.4em;
+}
+
+.col-2
+{
+	position: relative;
+	display: inline-block;
+	width: 45%;
+	float:right;
+
+}
+
+.profile
+{
+	margin-bottom: 7%;
+}
+
+.profile:nth-child(1)
+{
+	margin-top:10%;
+}
+
+.profile img
+{
+	height: 115px;
+	width: 115px;
+	float: left;
+	border-radius: 5px;
+	margin-right: 4%;
+}
+
+.profile .name
+{
+	font-size: 1.3em;
+	font-weight: 600;
+	margin:0;
+	margin-bottom: 2%;
+}
+
+.profile .role
+{
+	font-size: 1em;
+	font-weight: 0;
+	font-family: Arial;
+	color:gray;
+	margin:0;
+	margin-bottom: 2%;
+}
+
+.profile .description
+{
+	margin:0;
+	font-size: 1.1em;
+}
+
+.investors-advisors
+{
+	width: 100%;
+	border:1px solid gray;
+	border-radius: 5px;
+	display: inline-block;
+
+	margin-top: 5%;
+	margin-bottom: 1%;
+}
+
+.investors-advisors .title
+{
+
+	font-size: 1.4em;
+	border-bottom:1px dashed gray;
+	width: 80%;
+	margin-left: 5%;
+}
+
+.investor-profile
+{
+	display: inline-block;
+	margin-left:5%;
+	margin-bottom: 2%;
+}
+
+.investor-profile img
+{
+	width: 60px;
+	height: 60px;
+	float:left;
+
+}
+
+.investor-profile .info
+{
+	float:left;
+	margin:0;
+}
+
+.investor-profile .name
+{
+	font-size:1em;
+	display: inline-block;
+	font-weight: bold;
+	margin:0;
+	margin-bottom:10%;
+}
+.investor-profile .organization
+{
+	direction: block;
+	font-size:1em;
+	margin:0;
 }

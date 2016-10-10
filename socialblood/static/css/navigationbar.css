@@ -22,10 +22,11 @@ nav
 {
 	position: relative;
     display:block;
-	width: 80%;
+	width: 100%;
 	height: 40%;
 	text-align:center;
-	top:25px;
+	top:10%;
+	margin:0 auto;
 }
 
 .nav-wrapper .nav-info
