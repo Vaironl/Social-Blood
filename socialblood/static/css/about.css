@@ -145,12 +145,19 @@ body
 	margin-left: 5%;
 }
 
+.investors-container
+{
+	margin-left: 5%;
+}
+
 .investor-profile
 {
 	display: inline-block;
-	margin-left:5%;
+	width:240px;
+	height: 80px;
 	margin-bottom: 2%;
 }
+
 
 .investor-profile img
 {
@@ -164,6 +171,7 @@ body
 {
 	float:left;
 	margin:0;
+	margin-left: 10px;
 }
 
 .investor-profile .name

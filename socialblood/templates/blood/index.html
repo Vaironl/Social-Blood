@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/navigationbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -53,11 +54,13 @@
         enough voluntary blood donations. You live in the same world as others and 90 minutes of your time once or twice
         a year could save 3 lives. Furthermore, its healthy to donate blood!
         </p>
-            {% if user.is_authenticated %}
-    {% else %}
-        <button class="main-button"><a href="/register/">Register Now</a></button>
-    {% endif %}
     </div>
 </div>
+<footer>
+
+    <img src="{% static 'images/logo-dark.png' %}">
+    <h2>© Socialblood. All rights reserved</h2>
+    
+</footer>
 </body>
 </html>
