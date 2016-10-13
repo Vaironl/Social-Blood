@@ -13,6 +13,9 @@ def index(request):
 def about(request):
     return render(request, 'blood/about.html', {})
 
+def contact(request):
+    return render(request, 'blood/contact.html', {})
+
 def thank_you(request):
     return render(request, 'blood/thank_you_request.html', {})
 

@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
 
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <script type="text/javascript" src="{% static 'js/animation.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/thankyou.css' %}">
 </head>
 <body>
 
@@ -17,7 +16,16 @@
     <div class="logo">
         <img src="{% static 'images/logo-dark.png' %}">
     </div>
+             {% if user.is_authenticated %}
+            <div class=" user-section">
+                <h1 class = "username">{{user.username}}</h1>
+                <button class="myButton logout"><a href="/logout/">Logout</a></button>
+            </div>
+        {% else %}
+        {% endif %}
 </nav>
+
+
 
 <div class="container">
     <center><p>Thank you for submitting a blood request.</p></center>
