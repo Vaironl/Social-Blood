@@ -40,7 +40,26 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #alluth apps
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
 ]
+
+#Needed for allauth
+SITE_ID = 1
+#Redirect after LOGIN
+LOGIN_REDIRECT_URL = "/"
+
+AUTHENTICATION_BACKENDS = (
+    #Needed to login in django admin
+    'django.contrib.auth.backends.ModelBackend',
+    #Allauth specific authentication methods
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

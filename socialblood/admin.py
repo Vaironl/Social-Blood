@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-from .models import Post, Request
+from .models import Request
 
 # Register your models here.
 
-admin.site.register(Post)
 admin.site.register(Request)

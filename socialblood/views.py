@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from socialblood.models import Post, Request
+from socialblood.models import Request
 from socialblood.forms import RequestForm, UserForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
