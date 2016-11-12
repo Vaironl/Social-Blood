@@ -9,17 +9,20 @@
 {% endblock %}
 <body>
 	<div class="wrapper">
+		
 		<h1 class="title">Login to Socialblood</h1>
-		<form id="login_form" method="post" action="/login/">
-		{% csrf_token %}
-		<h1>Username:</h1> <input type="text" name="username" value="" size="50" /> <br />
-		<h1>Password:</h1> <input type="password" name="password" value="" size="50" /> <br />
-		<input type="submit" value="submit" />
-		</form>
 
-		{% load socialaccount %}
-		{% providers_media_js %}
-		<a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Connect</a>
+			<form id="login_form" method="post" action="/login/">
+			{% csrf_token %}
+			<center><h1>Username:</h1> <input type="text" name="username" value="" size="50" /></center> <br />
+			<center><h1>Password:</h1> <input type="password" name="password" value="" size="50" /></center> <br />
+			<center><input type="submit" value="submit" /></center>
+			</form>
 
+		<div class="facebook-login">
+			{% load socialaccount %}
+			{% providers_media_js %}
+			<center><button class="customButton"><a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Login</a></button></center>
+		</div>
 	</div>
 </body>

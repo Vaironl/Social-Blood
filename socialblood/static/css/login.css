@@ -4,12 +4,14 @@
 	font-family: 'Roboto', sans-serif;
 	color:white;
 }
+
 .wrapper
 {
-	width: 60%;
+	width: 50%;
 	margin: 0 auto;
 	padding:0;
 }
+
 
 .title
 {
@@ -19,20 +21,58 @@
 	font-size: 4em;
 }
 
+#login_form
+{
+		position: relative;
+	top:100px;
+	left:0%;
+	position: relative;
+
+	display: block;
+
+	height: 30vh;
+	margin:0;
+	padding:0;
+}
+
 form
 {
 	padding: 0px;
 	margin:0px;
-	display: inline;
 
 }
 form input
 {
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 
 form h1
 {
 	font-size: 2.5em;
 	display: inline;
+}
+
+.facebook-login
+{
+	position: relative;
+	top:20vh;
+}
+
+.customButton
+{
+	font-size: 2em;
+	border-radius: 10px;
+	border:2px solid white;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,4096ee+100;Blue+Flat+%232 */
+	background: #4096ee; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4096ee 0%, #4096ee 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #4096ee 0%,#4096ee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+}
+
+.customButton a
+{
+	color: white;
 }
