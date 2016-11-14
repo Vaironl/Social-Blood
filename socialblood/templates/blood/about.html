@@ -22,6 +22,7 @@
         <div class="nav-info">
             <h3><a href="/">Home</a></h3>
              {% if user.is_authenticated %}
+            <h3><a href="/userrequests/">My Requests</a></h3>
             <h3><a href="/request/">Request Blood</a></h3>
             <h3><a href="/requestlist/">Request List</a></h3>
             {% else %}

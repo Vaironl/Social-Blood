@@ -22,7 +22,7 @@
         <div class="nav-info">
              {% if user.is_authenticated %}
             <h3><a href="/">Home</a></h3>
-            <h3><a href="/userrequests/">My Requests</a></h3>
+            <h3><a href="/requestlist/">Request Lists</a></h3>
             <h3><a href="/request/">Request Blood</a></h3>
             <h3><a href="/about/">About</a></h3>
             {% else %}
@@ -49,10 +49,11 @@
 
 	<ul id="requestUL">
 	{% for request in object_list %}
+        {% if request.user.username == user.username %}
 	    <li class="entry">
         <div class="line">
             <div class="user">
-                <h1><img src="{% static 'images/icons/avatar.png' %}"> {{request.user}}</h1>
+                <h1><img src="{% static 'images/icons/avatar.png' %}"> {{request.user.username}}</h1>
             </div>
             <div class="blood_type">
             <h1>Blood type: {{ request.blood_type }}</h1>
@@ -67,10 +68,7 @@
                 <h1><img src="{% static 'images/icons/placeholder.png' %}"> {{request.location}}</h1>
             </div>
         </li>
-
-	{% empty %}
-	    <li>No requests have been made yet.</li>
-
+        {% endif %}
 	{% endfor %}
 	</ul>
 </div>

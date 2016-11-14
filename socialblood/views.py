@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView
 
 def index(request):
@@ -45,8 +46,6 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
-
-
 def register(request):
     registered = False
 
@@ -80,7 +79,17 @@ def add_request(request):
         form = RequestForm()
     return render(request, 'blood/request.html', {'form': form})
 
+@method_decorator(login_required, name="dispatch")
+class UserRequestsListView(ListView):
+    """Allows the user to view their own blood requests"""
 
+    model = Request
+    template_name = 'blood/userrequests.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(UserRequestsListView, self).get_context_data(**kwargs)
+        return context
+@method_decorator(login_required, name="dispatch")
 class RequestListView(ListView):
     """Allows the user to view the blood requests made"""
 
