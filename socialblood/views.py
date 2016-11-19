@@ -6,7 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView
+from django.views.generic import ListView, DeleteView
+from django.urls import reverse_lazy
 
 def index(request):
     return render(request, 'blood/index.html', {})
@@ -79,9 +80,15 @@ def add_request(request):
         form = RequestForm()
     return render(request, 'blood/request.html', {'form': form})
 
+class RequestDelete(DeleteView):
+    """Deletes a blood request made by the user"""
+    model = Request
+    success_url = reverse_lazy('requests.views.all_requests')
+
+
 @method_decorator(login_required, name="dispatch")
 class UserRequestsListView(ListView):
-    """Allows the user to view their own blood requests"""
+    """Allows the user to view their own blood requests and modify them"""
 
     model = Request
     template_name = 'blood/userrequests.html'
@@ -89,6 +96,7 @@ class UserRequestsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(UserRequestsListView, self).get_context_data(**kwargs)
         return context
+
 @method_decorator(login_required, name="dispatch")
 class RequestListView(ListView):
     """Allows the user to view the blood requests made"""

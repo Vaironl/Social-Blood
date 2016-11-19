@@ -56,7 +56,7 @@
                 <h1><img src="{% static 'images/icons/avatar.png' %}"> {{request.user.username}}</h1>
             </div>
             <div class="blood_type">
-            <h1>Blood type: {{ request.blood_type }}</h1>
+                <h1>Blood type: {{ request.blood_type }}</h1>
             </div>
         </div>
         <div class="line">
@@ -67,7 +67,12 @@
             <div class="location">
                 <h1><img src="{% static 'images/icons/placeholder.png' %}"> {{request.location}}</h1>
             </div>
+            <div class="id">
+                <h1>ID: {{ request.id }}</h1>
+            </div>
+            <button class="myButton logout"><a>Delete</a></button>
         </li>
+
         {% endif %}
 	{% endfor %}
 	</ul>
