@@ -28,3 +28,8 @@ class RequestForm(forms.ModelForm):
     class Meta:
         model = Request
         fields = ('blood_type','location', 'phone_number')
+
+class DeleteRequestForm(forms.ModelForm):
+    class Meta:
+        model = Request
+        fields = []

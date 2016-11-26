@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from socialblood.models import Request
-from socialblood.forms import RequestForm, UserForm
+from socialblood.forms import RequestForm, UserForm, DeleteRequestForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
@@ -80,10 +80,17 @@ def add_request(request):
         form = RequestForm()
     return render(request, 'blood/request.html', {'form': form})
 
-class RequestDelete(DeleteView):
-    """Deletes a blood request made by the user"""
-    model = Request
-    success_url = reverse_lazy('requests.views.all_requests')
+
+
+
+
+
+
+@login_required
+def delete_request(request, id):
+    request = get_object_or_404(Request, pk=id).delete()
+    return HttpResponseRedirect('/userrequests/')
+
 
 
 @method_decorator(login_required, name="dispatch")
