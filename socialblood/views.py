@@ -88,9 +88,14 @@ def add_request(request):
 
 @login_required
 def delete_request(request, id):
-    request = get_object_or_404(Request, pk=id).delete()
-    return HttpResponseRedirect('/userrequests/')
+    request_user = request.user.username
+    blood_request_user= get_object_or_404(Request,pk=id).user
 
+    # Only delete the blood request if the user logged in is the owner
+    if str(request_user) == str(blood_request_user):
+        print "Users were equal"
+        request_to_delete = get_object_or_404(Request, pk=id).delete()
+        return HttpResponseRedirect('/userrequests/')
 
 
 @method_decorator(login_required, name="dispatch")
