@@ -7,6 +7,13 @@
 	font-size:1em;
 }
 
+html
+{
+	height: 100%;
+	padding:0;
+	margin:0;
+}
+
 body
 {
 	/*background-color: rgba(230, 230, 230, 0.4);*/
@@ -22,6 +29,9 @@ body
 .main-image img
 {
 	width: 100%;
+	margin:0 auto;
+	position: relative;
+	/*height: 960px;*/
 }
 
 .main-image p
@@ -40,23 +50,4 @@ body
 {
 	position: absolute;
 	top:40%;
-}
-
-
-.container
-{
-	width: 60%;
-	margin:0 auto;
-	height: 480px;
-	background-color: red;
-}
-
-.container p
-{
-	font-size: 1.5em;
-	letter-spacing: 1px;	
-	font-weight: 200;
-	position: relative;
-	top:5%;
-	margin-bottom:5%;
 }

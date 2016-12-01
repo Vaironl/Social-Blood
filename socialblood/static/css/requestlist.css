@@ -29,6 +29,8 @@ body {
 	margin:0 auto;
 	position: relative;
 	top:20px;
+	height: 100%;
+
 }
 
 a
@@ -117,7 +119,6 @@ ul li .user h1
 ul li h2
 {
 
-/*background-color: rgba(102, 204, 255, 0.5);*/
 border-radius: 10px;
 padding:10px;
 }
@@ -150,4 +151,20 @@ ul li .location h1
 	display: block;
 	color:black;
 	margin-right: 10px;
+}
+
+footer
+{
+	position: relative;
+	display: block;
+	bottom: 0px;
+	height: 20px;
+	background-color: red;
+}
+
+footer img
+{
+	height: 50px;
+	width: 50px;
+	margin:0 auto;
 }
