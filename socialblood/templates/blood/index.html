@@ -10,23 +10,30 @@
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style type="text/css">
+        body
+        {
+            background-image: url("{% static 'images/map.png' %}");
+        }
+    </style>
 </head>
 <body>
 
 <ul class="nav nav-tabs">
 
+                    <li class="active" role="presentation"><a href="#">Home</a></li>
                      {% if user.is_authenticated %}
-                    <li><a href="/userrequests/">My Requests</a></li>
-                    <li><a href="/request/">Request Blood</a></li>
-                    <li><a href="/requestlist/">Request List</a></li>
-                    <li><a href="/about">About</a></li>
-                    {% else %}
-                    <a class="btn btn-default navbar-btn navbar-right" href="{% url 'login'%}">Login</a>
 
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="#">About</a></li>
+                    <li role="presentation"><a href="/userrequests/">My Requests</a></li>
+                    <li role="presentation"><a href="/request/">Request Blood</a></li>
+                    <li role="presentation"><a href="/requestlist/">Request List</a></li>
+                    <li role="presentation"><a href="/about/">About</a></li>
+                    {% else %}
+                    <!-- <li role="presentation"><a href="{% url 'register' %}">Register</a></li> -->
+                    <li role="presentation"><a href="/about/">About</a></li>
+                    <li role="presentation"><a href="/contact/">Contact</a></li>
+                    <li role="presentation"><a href="{% url 'login'%}">Sign in</a></li>
                     {% endif %}
-                    <li><a href="/contact/">Contact</a></li>
         {% if user.is_authenticated %}
         <div class=" user-section">
             <h1 class = "username">{{user.username}}</h1>
@@ -37,19 +44,20 @@
     </div>
 </ul>   
 
-<div class="main-image">
-    <img src="{% static 'images/map.png' %}">
-    <div class="intro">
-        <p>
+<div class="container-fluid">
+    <!-- <img src="{% static 'images/map.png' %}"> -->
+    <div class="container">
+        <h3>
         This world faces a problem. There is almost always a shortage of blood in developing and developing nations.
         (40,000 units of blood is required everyday in the United States). This problem could be solved if there were
         enough voluntary blood donations. You live in the same world as others and 90 minutes of your time once or twice
         a year could save 3 lives. Furthermore, its healthy to donate blood!
-        </p>
+        </h3>
     </div>
 </div>
+
 <footer class="navbar-fixed-bottom">
-    <img src="{% static 'images/logo-dark.png' %}">
+    <!-- <img src="{% static 'images/logo-dark.png' %}"> -->
     <h2>© Socialblood. All rights reserved</h2>
 </footer>
 </body>

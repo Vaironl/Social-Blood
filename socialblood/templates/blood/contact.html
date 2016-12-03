@@ -5,53 +5,56 @@
     <meta charset="UTF-8">
     <title>Socialblood Home</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/navigationbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
     <link rel="stylesheet" href="{% static 'css/user.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-
-    <!-- <script type="text/javascript" src="{% static 'js/animation.js' %}"></script> -->
 </head>
 <body>
 
-<nav>
-    <div class="logo">
-        <img src="{% static 'images/logo-dark.png' %}">
-    </div>
-    <div class="nav-wrapper">
-        <div class="nav-info">
-        <h3><a href="/">Home</a></h3>
-             {% if user.is_authenticated %}
-            <h3><a href="/userrequests/">My Requests</a></h3>
-            <h3><a href="/request/">Request Blood</a></h3>
-            <h3><a href="/requestlist/">Request List</a></h3>
-            {% else %}
-            <h3><a href="{% url 'login'%}">Login</a></h3>
-            <h3><a href="{% url 'register' %}">Register</a></h3>
-            {% endif %}
-            <h3><a href="/about">About</a></h3>
+<ul class="nav nav-tabs">
+
+                    <li role="presentation"><a href="/">Home</a></li>
+                     {% if user.is_authenticated %}
+
+                    <li role="presentation"><a href="/userrequests/">My Requests</a></li>
+                    <li role="presentation"><a href="/request/">Request Blood</a></li>
+                    <li role="presentation"><a href="/requestlist/">Request List</a></li>
+                    <li role="presentation"><a href="/about/">About</a></li>
+                    {% else %}
+                    <!-- <li role="presentation"><a href="{% url 'register' %}">Register</a></li> -->
+                    <li role="presentation"><a href="/about/">About</a></li>
+                    <li class="active"  role="presentation"><a href="/contact/">Contact</a></li>
+                    <li role="presentation"><a href="{% url 'login'%}">Sign in</a></li>
+                    {% endif %}
+        {% if user.is_authenticated %}
+        <div class=" user-section">
+            <h1 class = "username">{{user.username}}</h1>
+            <button class="myButton logout"><a href="/logout/">Logout</a></button>
         </div>
+        {% else %}
+        {% endif %}
     </div>
-    {% if user.is_authenticated %}
-    <div class=" user-section">
-        <h1 class = "username">{{user.username}}</h1>
-        <button class="myButton logout"><a href="/logout/">Logout</a></button>
-    </div>
-    {% else %}
-    {% endif %}
-</nav>
+</ul>
 
-<div class="wrapper">
+<div class="container-fluid contact-info-container">
 	<div class="contact-info">
+    <div class="container-fluid">
 		<h1>You have our complete attention</h1>
+    </div>
+    <div class="container-fluid">
 		<p>93% of questions answered within 3 hours or less</p>
+    </div>
 
-		<center>
-			<a href="mailto:k@socialblood.org" class="email-button">Email us a question</a>
-			<a href ="https://twitter.com/socialblood" target="_blank" class="tweet-button">Send us a tweet!</a>
-		</center>
+            <div class="col-md-3"></div>
+            <div class="col-md-3 button">
+			     <a href="mailto:k@socialblood.org" class="email-button">Email us a question</a>
+            </div>
+            <div class="col-md-3 button">
+			     <a href ="https://twitter.com/socialblood" target="_blank" class="tweet-button">Send us a tweet!</a>
+            </div>
+            <div class="col-md-3"></div>
 	</div>
 </div>
 <div class="container">
@@ -81,7 +84,7 @@
 
 <footer>
 
-    <img src="{% static 'images/logo-dark.png' %}">
+    <!-- <img src="{% static 'images/logo-dark.png' %}"> -->
     <h2>© Socialblood. All rights reserved</h2>
     
 </footer>

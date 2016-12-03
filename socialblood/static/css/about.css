@@ -20,15 +20,22 @@ body
 	background-color: #373f54;
 }
 
+.nav
+{
+	background-color: white;
+}
+
 .main-image
 {
 	position: relative;
 	width: 100%;
+	height: 40vh;
 }
 
 .main-image img
 {
-	width: 100%;
+	/*width: 100%;*/
+	height: 40vh;
 	opacity: .2;
 }
 
@@ -36,7 +43,7 @@ body
 .main-image h1
 {
 	width: 100%;
-	font-size: 2em;
+	font-size: 1.5em;
 	color:white;
 	position: absolute;
 	top:45%;
@@ -140,7 +147,7 @@ body
 	display: inline-block;
 
 	margin-top: 5%;
-	margin-bottom: 1%;
+	margin-bottom: 50px;
 }
 
 .investors-advisors .title

@@ -14,50 +14,48 @@
 </head>
 <body>
 
-<nav>
-    <div class="logo">
-        <img src="{% static 'images/logo-dark.png' %}">
-    </div>
-    <div class="nav-wrapper">
-        <div class="nav-info">
-            <h3><a href="/">Home</a></h3>
-             {% if user.is_authenticated %}
-            <h3><a href="/userrequests/">My Requests</a></h3>
-            <h3><a href="/request/">Request Blood</a></h3>
-            <h3><a href="/requestlist/">Request List</a></h3>
-            {% else %}
-            <h3><a href="{% url 'login'%}">Login</a></h3>
-            <h3><a href="{% url 'register' %}">Register</a></h3>
-            {% endif %}
-            <h3><a href="/contact/">Contact</a></h3>
+<ul class="nav nav-tabs">
 
+                    <li role="presentation"><a href="/">Home</a></li>
+                     {% if user.is_authenticated %}
+
+                    <li role="presentation"><a href="/userrequests/">My Requests</a></li>
+                    <li role="presentation"><a href="/request/">Request Blood</a></li>
+                    <li role="presentation"><a href="/requestlist/">Request List</a></li>
+                    <li class="active" role="presentation"><a href="#">About</a></li>
+                    {% else %}
+                    <!-- <li role="presentation"><a href="{% url 'register' %}">Register</a></li> -->
+                    <li class="active" role="presentation"><a href="#">About</a></li>
+                    <li role="presentation"><a href="/contact/">Contact</a></li>
+                    <li role="presentation"><a href="{% url 'login'%}">Sign in</a></li>
+                    {% endif %}
+        {% if user.is_authenticated %}
+        <div class=" user-section">
+            <h1 class = "username">{{user.username}}</h1>
+            <button class="myButton logout"><a href="/logout/">Logout</a></button>
         </div>
+        {% else %}
+        {% endif %}
     </div>
-    {% if user.is_authenticated %}
-    <div class=" user-section">
-        <h1 class = "username">{{user.username}}</h1>
-        <button class="myButton logout"><a href="/logout/">Logout</a></button>
-    </div>
-    {% else %}
-    {% endif %}
-</nav>
+</ul>  
 
 <div class="main-image">
-    <img src="{% static 'images/bg.jpg' %}">
-    <h1>How the company came to be, why we do what we do
+    <!-- <img src="{% static 'images/bg.jpg' %}"> -->
+    <h1 class="col-md-4">How the company came to be, why we do what we do
 and the team behind Socialblood.</h1>
 </div>
 
 <div class="container">
-    <div class="wrapper">
-        <div class="col-1">
+        <div class="col-md-5">
             <h1>Socialblood is building the largest network of blood donors, Hospitals and Blood banks on the web.</h1>
             <p>Socialblood was founded by Karthik Naralasetty in 2011. He dropped out of Rutgers University, New Jersey to create his own tech-company and has been an Internet Entrepreneur ever since. In June 2011, he noticed the structural deficiencies in the local system of blood transfusions when he witnessed a family’s struggle to find a regular transfusion for their four year old to treat her Thalassemia; a disease which affects around 40 million Indians.</p>
             <p>
             At Socialblood, the mission is not only to create an easy, trustworthy and a reliable network of donors around the world but also grow together with Hospitals, Blood-banks and supporting organizations.We aim to change and disrupt the archaic ways of finding blood donors and build the largest network of voluntary donors around the world. Making it as easy as a few clicks.
             </p>
         </div>
-        <div class="col-2">
+        <!-- Div to provide middle padding -->
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
             <div class="profile">
                 <img src="{% static 'images/karthiknaralasetty.png' %}">
                 <h1 class="name">Karthik Naralasetty</h1>
@@ -93,7 +91,8 @@ and the team behind Socialblood.</h1>
                 <p class="description">Mithun is a well rounded Engineer. His work on Application Architecture and Backend development adds the necessary foundation to the product.</p>
             </div>
         </div>
-        <div class="investors-advisors">
+
+        <div class="investors-advisors container-fluid">
 
             <h1 class="title">INVESTORS & ADVISORS</h1>
 
@@ -160,11 +159,10 @@ and the team behind Socialblood.</h1>
 
 
         </div>
-    </div>
 </div>
 
-<footer>
-    <img src="{% static 'images/logo-dark.png' %}">
+<footer class="navbar-fixed-bottom">
+    <!-- <img src="{% static 'images/logo-dark.png' %}"> -->
     <h2>© Socialblood. All rights reserved</h2>
 </footer>
 </body>

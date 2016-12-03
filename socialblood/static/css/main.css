@@ -16,8 +16,8 @@ html
 
 body
 {
-	/*background-color: rgba(230, 230, 230, 0.4);*/
 	background-color: #373f54;
+	width: 100%;
 }
 
 .main-image
@@ -26,30 +26,10 @@ body
 	width: 100%;
 }
 
-.main-image img
-{
-	width: 100%;
-	margin:0 auto;
-	position: relative;
-	/*height: 960px;*/
-}
-
-.main-image p
-{
-	position: relative;
-	top: 0px;
-	margin:0 auto;
-
-	font-size: 2em;
-	width: 70%;
-	text-align: center;
-	color:white;
-}
-
 .intro
 {
 	position: absolute;
-	top:40%;
+	top:20%;
 }
 
 .navbar-btn
@@ -63,3 +43,25 @@ body
 {
 	background-color: white;
 }
+
+
+.container-fluid h3
+{
+	color:white;
+}
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) {  
+	*
+	{
+		color:red;
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+*
+	{
+		color:red;
+	}
+ }

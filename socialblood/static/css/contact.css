@@ -10,6 +10,11 @@ body
 		background-color: #373f54;
 }
 
+.nav
+{
+	background-color: white;
+}
+
 
 .wrapper
 {
@@ -19,11 +24,16 @@ body
 	margin:0 auto;
 }
 
+.contact-info-container
+{
+	height: 480px;
+}
+
 .contact-info
 {
 	position: relative;
 	display: block;
-	top:25%;
+	top:15%;
 }
 
 .contact-info h1,p
@@ -41,20 +51,26 @@ body
 {
 	position: relative;
 	color:white;
-	font-size: 2em;
+	font-size: 1.3em;
 	text-align: center;
 	
 	background-color: #2bc58f;
 	border-color: #2bc58f;
 
 	padding:20px;
-	width: 260px;
-	height: 80px;
+	
 	top:30px;
+	left: 40px;
 
 	border-radius: 10px;
 
 	margin-right: 3%;
+}
+
+.button{
+
+	/*border:1px solid red;*/
+	height: 100px;
 }
 
 .contact-info .tweet-button
@@ -62,6 +78,11 @@ body
 	background-color: #55ACEE;
 	border-color: #55ACEE;
 
+}
+
+.contact-info .tweet-button:hover
+{
+	color:white;
 }
 
 .contact-info a:hover

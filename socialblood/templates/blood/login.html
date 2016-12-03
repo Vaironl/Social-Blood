@@ -4,25 +4,56 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'css/register.css' %}">
 	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 {% block title_block %}
 {% endblock %}
 <body>
-	<div class="wrapper">
-		
-		<h1 class="title">Login to Socialblood</h1>
+	<ul class="nav nav-tabs">
 
+	                    <li role="presentation"><a href="/">Home</a></li>
+	                     {% if user.is_authenticated %}
+
+	                    <li role="presentation"><a href="/userrequests/">My Requests</a></li>
+	                    <li role="presentation"><a href="/request/">Request Blood</a></li>
+	                    <li role="presentation"><a href="/requestlist/">Request List</a></li>
+	                    <li role="presentation"><a href="/about/">About</a></li>
+	                    {% else %}
+	                    <!-- <li role="presentation"><a href="{% url 'register' %}">Register</a></li> -->
+	                    <li role="presentation"><a href="/about/">About</a></li>
+	                    <li role="presentation"><a href="/contact/">Contact</a></li>
+	                    <li class="active" role="presentation"><a href="{% url 'login'%}">Sign in</a></li>
+	                    {% endif %}
+	        {% if user.is_authenticated %}
+	        <div class=" user-section">
+	            <h1 class = "username">{{user.username}}</h1>
+	            <button class="myButton logout"><a href="/logout/">Logout</a></button>
+	        </div>
+	        {% else %}
+	        {% endif %}
+	    </div>
+	</ul>
+	<div class="wrapper">
+
+		<div class="container-fluid">
+			<h1 class="title">Login to Socialblood</h1>
+			<h3>We are currently only allowing sign in through Facebook</h3>
+		</div>
+<!-- 
 			<form id="login_form" method="post" action="/login/">
 			{% csrf_token %}
 			<center><h1>Username:</h1> <input type="text" name="username" value="" size="50" /></center> <br />
 			<center><h1>Password:</h1> <input type="password" name="password" value="" size="50" /></center> <br />
 			<center><input type="submit" value="submit" /></center>
-			</form>
-
+			</form> -->
 		<div class="facebook-login">
 			{% load socialaccount %}
 			{% providers_media_js %}
-			<center><button class="customButton"><a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Login</a></button></center>
+			<center><a class="facebook-button" href="{% provider_login_url "facebook" method="js_sdk" %}"><img width="40px" height="40px" src="{% static 'images/facebook-logo.png' %}"> Facebook Login</a></center>
 		</div>
 	</div>
+	<footer class="navbar-fixed-bottom">
+	    <!-- <img src="{% static 'images/logo-dark.png' %}"> -->
+	    <h2>© Socialblood. All rights reserved</h2>
+	</footer>
 </body>

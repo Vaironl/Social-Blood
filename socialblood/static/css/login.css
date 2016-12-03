@@ -13,13 +13,13 @@
 }
 
 
-.title
+/*.title
 {
 	display: block;
 	margin:0;
 	padding: 0;
 	font-size: 4em;
-}
+}*/
 
 #login_form
 {
@@ -58,11 +58,17 @@ form h1
 	top:20vh;
 }
 
-.customButton
+.facebook-login img
 {
+	margin-right:10px;
+}
+
+.facebook-button
+{
+	color:white;
 	font-size: 2em;
-	border-radius: 10px;
-	border:2px solid white;
+	border:none;
+	padding:10px;
 
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,4096ee+100;Blue+Flat+%232 */
 	background: #4096ee; /* Old browsers */
