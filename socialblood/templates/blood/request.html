@@ -14,34 +14,36 @@
 <body>
 
 
-<nav>
-    <div class="logo">
-        <img src="{% static 'images/logo-dark.png' %}">
-    </div>
-    <div class="nav-wrapper">
-        <div class="nav-info">
-             {% if user.is_authenticated %}
-             <h3><a href="/">Home</a></h3>
-            <h3><a href="/userrequests/">My Requests</a></h3>
-            <h3><a href="/requestlist/">Request List</a></h3>
-            <h3><a href="/about/">About</a></h3>
-            {% else %}
-            <h3><a href="{% url 'login'%}">Login</a></h3>
-            <h3><a href="{% url 'register' %}">Register</a></h3>
-            <h3><a href="#">About</a></h3>
-            {% endif %}
-            <h3><a href="/contact/">Contact</a></h3>
+<ul class="nav nav-tabs">
 
-        </div>
-    </div>
-         {% if user.is_authenticated %}
-            <div class=" user-section">
-                <h1 class = "username">{{user.username}}</h1>
-                <button class="myButton logout"><a href="/logout/">Logout</a></button>
-            </div>
+                    <li role="presentation"><a href="/">Home</a></li>
+                     {% if user.is_authenticated %}
+
+                    <li role="presentation"><a href="/userrequests/">My Requests</a></li>
+                    <li class="active" role="presentation"><a href="#">Request Blood</a></li>
+                    <li role="presentation"><a href="/requestlist/">Request List</a></li>
+                    <li role="presentation"><a href="/about/">About</a></li>
+                    <li role="presentation"><a href="/contact/">Contact</a></li>
+                    {% else %}
+                    <!-- <li role="presentation"><a href="{% url 'register' %}">Register</a></li> -->
+                    <li role="presentation"><a href="/about/">About</a></li>
+                    <li role="presentation"><a href="/contact/">Contact</a></li>
+                    <li role="presentation"><a href="{% url 'login'%}">Sign in</a></li>
+                    {% endif %}
+        {% if user.is_authenticated %}
+        <!--<div class=" user-section">-->
+            <!--<h1 class = "username">{{user.username}}</h1>-->
+            <!--<button class="myButton logout"><a href="/logout/">Logout</a></button>-->
+        <!--</div>-->
+        <!--<p class="navbar-text navbar-right nav-username"><a href="#" class="navbar-link">{{user.username}}</a></p>-->
+        <li class="navbar-right" role="presentation"><a href="/logout/">Logout</a></li>
+        <li class="navbar-right" role="presentation"><a >Welcome, {{user.username}}</a></li>
+
         {% else %}
         {% endif %}
-</nav>
+    </div>
+</ul>
+
 
 
 <div class="container">

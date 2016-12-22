@@ -28,6 +28,7 @@
                     <li role="presentation"><a href="/request/">Request Blood</a></li>
                     <li role="presentation"><a href="/requestlist/">Request List</a></li>
                     <li role="presentation"><a href="/about/">About</a></li>
+                    <li role="presentation"><a href="/contact/">Contact</a></li>
                     {% else %}
                     <!-- <li role="presentation"><a href="{% url 'register' %}">Register</a></li> -->
                     <li role="presentation"><a href="/about/">About</a></li>
@@ -35,10 +36,14 @@
                     <li role="presentation"><a href="{% url 'login'%}">Sign in</a></li>
                     {% endif %}
         {% if user.is_authenticated %}
-        <div class=" user-section">
-            <h1 class = "username">{{user.username}}</h1>
-            <button class="myButton logout"><a href="/logout/">Logout</a></button>
-        </div>
+        <!--<div class=" user-section">-->
+            <!--<h1 class = "username">{{user.username}}</h1>-->
+            <!--<button class="myButton logout"><a href="/logout/">Logout</a></button>-->
+        <!--</div>-->
+        <!--<p class="navbar-text navbar-right nav-username"><a href="#" class="navbar-link">{{user.username}}</a></p>-->
+        <li class="navbar-right" role="presentation"><a href="/logout/">Logout</a></li>
+        <li class="navbar-right" role="presentation"><a >Welcome, {{user.username}}</a></li>
+
         {% else %}
         {% endif %}
     </div>

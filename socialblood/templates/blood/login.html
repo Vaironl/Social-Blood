@@ -37,7 +37,7 @@
 
 		<div class="container-fluid">
 			<h1 class="title">Login to Socialblood</h1>
-			<h3>We are currently only allowing sign in through Facebook</h3>
+			<center><h3>We are currently only allowing sign in through Facebook</h3></center>
 		</div>
 <!-- 
 			<form id="login_form" method="post" action="/login/">
@@ -46,7 +46,7 @@
 			<center><h1>Password:</h1> <input type="password" name="password" value="" size="50" /></center> <br />
 			<center><input type="submit" value="submit" /></center>
 			</form> -->
-		<div class="facebook-login">
+		<div class="facebook-login container-fluid">
 			{% load socialaccount %}
 			{% providers_media_js %}
 			<center><a class="facebook-button" href="{% provider_login_url "facebook" method="js_sdk" %}"><img width="40px" height="40px" src="{% static 'images/facebook-logo.png' %}"> Facebook Login</a></center>
